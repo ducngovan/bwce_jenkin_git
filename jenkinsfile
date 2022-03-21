@@ -8,5 +8,14 @@ pipeline {
 				echo 'Finish b1 liên kết với  git ..........................................................!!!'
 			}
 		}
+		stage('Build image docker') {
+			steps{
+				echo 'Start b2 liên kết với  docker ..........................................................!!!'
+				
+				echo 'Bộ xủ lý docker'
+				
+				echo 'Finish 2 thao tác với  docker ..........................................................!!!'
+			}
+		}
 	}
 }
