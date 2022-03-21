@@ -12,7 +12,7 @@ pipeline {
 			steps{
 				echo 'Start b2 liên kết với  docker ..........................................................!!!'
 				// This step should not normally be used in your script. Consult the inline help for details.
-				withDockerRegistry(credentialsId: 'duc1996', url: 'https://index.docker.io/v1/') {
+				withDockerRegistry(credentialsId: 'duc1996', url: 'https://hub.docker.com/') {
 				// some block
 				sh 'docker build -t duc1996/bwce_jenkins:v1  .'
 				sh 'docker push duc1996/bwce_jenkins:v1'
