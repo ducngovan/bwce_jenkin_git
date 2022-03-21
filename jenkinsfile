@@ -18,7 +18,6 @@ pipeline {
 				sh label:",script:'docker build -t duc1996/bwce_jenkins:v1 .'
 				sh label:",script:'docker push duc1996/bwce_jenkins:v1'	
 				}
-				
 				echo 'Finish 2 thao tác với  docker ..........................................................!!!'
 			}
 		}
