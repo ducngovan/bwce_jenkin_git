@@ -3,7 +3,9 @@ pipeline {
 	stages {
 		stage('Clone') {
 			steps{
+				echo 'Start b1 liên kết với  git ..........................................................!!!'
 				git branch: 'main', url: 'https://github.com/ducngovan/bwce_jenkin_git.git'
+				echo 'Finish b1 liên kết với  git ..........................................................!!!'
 			}
 		}
 	}
