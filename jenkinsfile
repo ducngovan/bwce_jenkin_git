@@ -1,24 +1,19 @@
 pipeline {
 	agent any
 	stages {
-		stage('Clone') {
+		stage('Clone git') {
 			steps{
-				echo 'Start b1 liên kết với  git ..........................................................!!!'
 				git branch: 'main', url: 'https://github.com/ducngovan/bwce_jenkin_git.git'
-				echo 'Finish b1 liên kết với  git ..........................................................!!!'
 			}
 		}
-		stage('Build image docker') {
+		stage('Docker') {
 			steps{
-				echo 'Start b2 liên kết với  docker ..........................................................!!!'
-				// This step should not normally be used in your script. Consult the inline help for details.
-				withDockerRegistry(credentialsId: 'duc1996', url: 'https://ui/ui/ui') {
-				// some block
-				sh 'docker build -t duc1996/bwce_jenkins:v1  .'
-				sh 'docker push duc1996/bwce_jenkins:v1'
+				withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
+				sh 'docker build -t duc1996/demo_jenkins_image:v1 .'
+				sh 'docker push duc1996/demo_jenkins_image:v1'
 				}
-				echo 'Finish 2 thao tác với  docker ..........................................................!!!'
 			}
 		}
+	
 	}
 }
