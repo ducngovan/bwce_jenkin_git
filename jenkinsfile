@@ -17,6 +17,7 @@ pipeline {
 		}
 		stage('Run container') {
 			steps{
+				echo 'Kubernetes ...............................'
 				sh 'kubectl create -f bwce_jenkins.yaml'
 			}
 		}
