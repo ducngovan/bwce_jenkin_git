@@ -17,11 +17,8 @@ pipeline {
 		}
 		stage('Run container') {
 			steps{
-				withDockerContainer('duc1996/demo_jenkins_image:v1') {
 				echo 'Docker ...............................'
-				sh 'docker run -- name demo_jenkins -p 8085:8085 duc1996/demo_jenkins_image:v1'
-				}
-				
+				sh 'docker run --name demo_jenkins -p 8085:8085 duc1996/demo_jenkins_image:v1'
 			}
 		}
 		
