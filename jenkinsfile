@@ -15,6 +15,12 @@ pipeline {
 				}
 			}
 		}
+		stage('Run container') {
+			steps{
+				sh 'kubectl create -f bwce_jenkins.yaml'
+			}
+		}
+		
 	
 	}
 }
