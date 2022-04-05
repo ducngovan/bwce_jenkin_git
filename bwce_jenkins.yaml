@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: bwce-jenkins
-        image: duc1996/bwce_jenkins:v1
+        image: duc1996/demo_jenkins_image:v1
         ports:
             - containerPort: 8085
 ---
