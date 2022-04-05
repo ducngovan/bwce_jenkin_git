@@ -17,8 +17,8 @@ pipeline {
 		}
 		stage('Run container') {
 			steps{
-				echo 'Kubernetes ...............................'
-				sh 'kubectl create -f bwce_jenkins.yaml'
+				echo 'Docker ...............................'
+				sh 'docker run -- name demo_jenkins -p 8085:8085 duc1996/demo_jenkins_image:v1'
 			}
 		}
 		
